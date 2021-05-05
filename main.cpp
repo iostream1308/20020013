@@ -47,9 +47,8 @@ void quitSDL(){
 //-----------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------
 int run(int level) {
-    Mix_Chunk* music = Mix_LoadWAV("bgm.wav");
-    Mix_Chunk* music1 = Mix_LoadWAV("stm.wav");
-    Mix_PlayChannel(1, music, -1);
+
+    Mix_PlayChannel(1, act.music, -1);
     Mix_Volume(1,MIX_MAX_VOLUME/3);
     SDL_RenderClear(renderer);
     play.SetRect();
@@ -66,10 +65,8 @@ int run(int level) {
     input_type_.up_ = 0;
     draw.RenderMap();
     draw.show_dango();
-    SDL_Texture * rel = Map.loadTexture("img/reload.png");
-    SDL_Texture * menu = Map.loadTexture("img/menu.png");
-    Map.renderTexture(rel, 1070, 0, 40, 40);
-    Map.renderTexture(menu, 1120, 0, 80, 40);
+    Map.renderTexture(act.rel, 1070, 0, 40, 40);
+    Map.renderTexture(act.menu, 1120, 0, 80, 40);
     SDL_RenderPresent(renderer);
     int tt = act.Play();
     if(tt == -1) {
@@ -89,7 +86,7 @@ int run(int level) {
             SDL_RenderClear(renderer);
             Map.wel_load();
             SDL_RenderPresent(renderer);
-            Mix_PlayChannel(1, music1, -1);
+            Mix_PlayChannel(1, act.music1, -1);
             return -2;
         }
     }
@@ -99,18 +96,22 @@ int main(int argc, char* argv[])
 {
 
     initSDL();
-    SDL_RenderClear(renderer);
-    SDL_RenderPresent(renderer);
     SDL_Event e;
     Map.load_img();
+    Map.set_plv();
+    Map.Lv();
+    act.Set();
+    dango = Map.loadTexture("img/dango.png");
+    Map.welcome = Map.loadTexture("menu/bgw.png");
+    Map.start = Map.loadTexture("menu/start.PNG");
+    Map.level = Map.loadTexture("menu/level.PNG");
+    Map.quit = Map.loadTexture("menu/quit.PNG");
+    Map.bgl = Map.loadTexture("menu/bg.png");
+    int level = 1;
     SDL_RenderClear(renderer);
     Map.wel_load();
     SDL_RenderPresent(renderer);
-    Map.set_plv();
-    int level = 1;
-    Mix_Chunk* music = Mix_LoadWAV("stm.wav");
-    Mix_PlayChannel(1, music, -1);
-    Mix_Music* click = Mix_LoadMUS("click.mp3");
+    Mix_PlayChannel(1, act.music1, -1);
     while(1) {
         if ( SDL_WaitEvent(&e) != 0 ){
             if(e.type == SDL_QUIT){
@@ -119,7 +120,7 @@ int main(int argc, char* argv[])
             }
             if(e.type == SDL_MOUSEBUTTONDOWN) {
                 if(e.button.x >= 600 && e.button.x <= 816 && e.button.y >= 100 && e.button.y <= 200) {
-                    Mix_PlayMusic(click, 1);
+                    Mix_PlayMusic(act.click, 1);
                     Map.RandMap();
                     while(1) {
                         int T = run(level);
@@ -139,7 +140,7 @@ int main(int argc, char* argv[])
                 }
                 else {
                     if(e.button.x >= 600 && e.button.x <= 816 && e.button.y >= 250 && e.button.y <= 350) {
-                        Mix_PlayMusic(click, 1);
+                        Mix_PlayMusic(act.click, 1);
                         Map.load_level();
                         int yes = 0;
                         while(1) {
@@ -147,7 +148,7 @@ int main(int argc, char* argv[])
                                 if (e.type == SDL_MOUSEBUTTONDOWN) {
                                     for (int i = 1; i <= 9; i++) {
                                         if(e.button.x >= pos_lv[i].l1 && e.button.x <= pos_lv[i].r1 && e.button.y >= pos_lv[i].l2 && e.button.y <= pos_lv[i].r2) {
-                                            Mix_PlayMusic(click, 1);
+                                            Mix_PlayMusic(act.click, 1);
                                             level = i;
                                             yes = 1;
                                             break;
