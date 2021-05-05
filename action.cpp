@@ -65,14 +65,6 @@ void act_::trap1(int X_pos, int Y_pos) {
 }
 int act_::Play() {
     bool is_quit = false;
-    SDL_Texture * rel = Map.loadTexture("img/reload.png");
-    SDL_Texture * menu = Map.loadTexture("img/menu.png");
-    Mix_Music* up = Mix_LoadMUS("up.mp3");
-    Mix_Music* scream = Mix_LoadMUS("scream.mp3");
-    Mix_Music* click = Mix_LoadMUS("click.mp3");
-    Mix_Chunk* lose = Mix_LoadWAV("lose.wav");
-    Mix_Chunk* wins = Mix_LoadWAV("win.wav");
-    SDL_Texture *dangod = Map.loadTexture("img/dangod.png");;
     while (!is_quit) {
         while (SDL_PollEvent(&e) != 0) {
             if (e.type == SDL_QUIT){
@@ -103,7 +95,6 @@ int act_::Play() {
             Mix_PlayMusic(scream, 1);
             SDL_Delay(600);
             SDL_RenderClear(renderer);
-            SDL_Texture *die = Map.loadTexture("img/die.png");
             Map.renderTexture(die, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             Map.renderTexture(rel, 480, 250, 100, 100);
             Map.renderTexture(menu, 430, 360, 200, 100);
@@ -155,7 +146,6 @@ int act_::Play() {
             Mix_PlayMusic(scream, 1);
             SDL_Delay(600);
             SDL_RenderClear(renderer);
-            SDL_Texture *die = Map.loadTexture("img/die.png");
             Map.renderTexture(die, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             Map.renderTexture(rel, 480, 250, 100, 100);
             Map.renderTexture(menu, 430, 360, 200, 100);
@@ -183,8 +173,6 @@ int act_::Play() {
         if(mat[y_pos_/TILE_SIZE][x_pos_/TILE_SIZE] == 22){
             SDL_Delay(50);
             SDL_RenderClear(renderer);
-            SDL_Texture *win = Map.loadTexture("img/win.png");
-            SDL_Texture * next = Map.loadTexture("img/next.png");
             Map.renderTexture(win, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             Map.renderTexture(rel, 480, 350, 100, 100);
             Map.renderTexture(menu, 580, 455, 200, 100);
