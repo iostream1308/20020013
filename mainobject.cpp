@@ -83,12 +83,15 @@ void Map_::load_data(int level) {
     char c = '0' + level;
     s += c;
     s += ".dat";
-    freopen(s.c_str(), "r", stdin);
-    for (int i = 0; i < MAX_MAP_Y; i++){
-        for (int j = 0; j < MAX_MAP_X; j++){
-            cin >> mat[i][j];
+    ifstream fileInput(s.c_str());
+    while(!fileInput.eof()) {
+        for (int i = 0; i < MAX_MAP_Y; i++){
+            for (int j = 0; j < MAX_MAP_X; j++){
+                fileInput >> mat[i][j];
+            }
         }
     }
+    fileInput.close();
 }
 void Map_::Lv() {
     for (int i = 1; i <= 9; i++) {
