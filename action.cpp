@@ -73,17 +73,7 @@ int act_::Play() {
             }
             act.input_action();
         }
-        if (e.type == SDL_MOUSEBUTTONDOWN) {
-            if(e.button.x >= 1070 && e.button.x <= 1110 && e.button.y >= 0 && e.button.y <= 40) {
-                Mix_PlayMusic(click, 1);
-                return 1;
-            }
-            if(e.button.x >= 1120 && e.button.x <= 1200 && e.button.y >= 0 && e.button.y <= 40) {
-                Mix_PlayMusic(click, 1);
-                return 2;
-            }
 
-        }
         SDL_RenderClear(renderer);
         play.do_player();
         if(y_pos_ > 550) {
@@ -104,10 +94,14 @@ int act_::Play() {
                 if (SDL_WaitEvent(&e) != 0) {
                     if (e.type == SDL_MOUSEBUTTONDOWN) {
                         if(e.button.x >= 480 && e.button.x <= 580 && e.button.y >= 250 && e.button.y <= 350) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 1;
                         }
                         if(e.button.x >= 430 && e.button.x <= 630 && e.button.y >= 360 && e.button.y <= 460) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 2;
                         }
@@ -155,10 +149,14 @@ int act_::Play() {
                 if (SDL_WaitEvent(&e) != 0) {
                     if (e.type == SDL_MOUSEBUTTONDOWN) {
                         if(e.button.x >= 480 && e.button.x <= 580 && e.button.y >= 250 && e.button.y <= 350) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 1;
                         }
                         if(e.button.x >= 430 && e.button.x <= 630 && e.button.y >= 360 && e.button.y <= 460) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 2;
                         }
@@ -183,14 +181,20 @@ int act_::Play() {
                 if (SDL_WaitEvent(&e) != 0) {
                     if (e.type == SDL_MOUSEBUTTONDOWN) {
                         if(e.button.x >= 480 && e.button.x <= 580 && e.button.y >= 350 && e.button.y <= 450) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 1;
                         }
                         if(e.button.x >= 580 && e.button.x <= 780 && e.button.y >= 455 && e.button.y <= 555) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 2;
                         }
                         if(e.button.x >= 280 && e.button.x <= 480 && e.button.y >= 455 && e.button.y <= 555) {
+                            e.button.x=0;
+                            e.button.y=0;
                             Mix_PlayMusic(click, 1);
                             return 0;
                         }
@@ -200,6 +204,21 @@ int act_::Play() {
                         return -1;
                     }
                 }
+            }
+        }
+        if (e.type == SDL_MOUSEBUTTONDOWN) {
+
+            if(e.button.x >= 1070 && e.button.x <= 1110 && e.button.y >= 0 && e.button.y <= 40) {
+                e.button.x=0;
+                e.button.y=0;
+                Mix_PlayMusic(click, 1);
+                return 1;
+            }
+            if(e.button.x >= 1120 && e.button.x <= 1200 && e.button.y >= 0 && e.button.y <= 40) {
+                e.button.x=0;
+                e.button.y=0;
+                Mix_PlayMusic(click, 1);
+                return 2;
             }
         }
 
