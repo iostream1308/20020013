@@ -75,7 +75,6 @@ void Map_::RandMap() {
     }
     s += num + ".jpg";
     bg = Map.loadTexture(s);
-    dango = Map.loadTexture("img/dango.png");
     Map.renderTexture(dango, 0, 400, 30, 30);
 }
 void Map_::load_data(int level) {
@@ -91,29 +90,28 @@ void Map_::load_data(int level) {
         }
     }
 }
-void Map_::wel_load() {
-    SDL_RenderClear(renderer);
-    SDL_Texture *welcome = Map.loadTexture("menu/bgw.png");
-    SDL_Texture *start = Map.loadTexture("menu/start.PNG");
-    SDL_Texture *level = Map.loadTexture("menu/level.PNG");
-    SDL_Texture *quit = Map.loadTexture("menu/quit.PNG");
-    renderTexture(welcome, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    renderTexture(start, 600, 100, 216, 100);
-    renderTexture(level, 600, 250, 216, 100);
-    renderTexture(quit, 600, 400, 216, 100);
-}
-void Map_::load_level() {
-    SDL_RenderClear(renderer);
-    SDL_Texture *bgl = Map.loadTexture("menu/bg.png");
-    renderTexture(bgl, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+void Map_::Lv() {
     for (int i = 1; i <= 9; i++) {
-        SDL_Texture *lv;
         char c = '0' + i;
         string s = "menu/";
         s += c;
         s += ".PNG";
-        lv = Map.loadTexture(s);
-        renderTexture(lv, pos_lv[i].l1, pos_lv[i].l2, 300, 100);
+        lv[i] = loadTexture(s);
+    }
+}
+void Map_::wel_load() {
+    SDL_RenderClear(renderer);
+    renderTexture(welcome, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    renderTexture(start, 600, 100, 216, 100);
+    renderTexture(level, 600, 250, 216, 100);
+    renderTexture(quit, 600, 400, 216, 100);
+    SDL_RenderPresent(renderer);
+}
+void Map_::load_level() {
+    SDL_RenderClear(renderer);
+    renderTexture(bgl, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    for (int i = 1; i <= 9; i++) {
+        renderTexture(lv[i], pos_lv[i].l1, pos_lv[i].l2, 300, 100);
     }
     SDL_RenderPresent(renderer);
 }
