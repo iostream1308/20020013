@@ -16,7 +16,14 @@ struct PLV{
 extern PLV pos_lv[10];
 class Map_ {
 public:
+    SDL_Texture *lv[10];
     SDL_Texture* loadTexture(const std::string &file);
+    SDL_Texture *welcome;
+    SDL_Texture *start;
+    SDL_Texture *level;
+    SDL_Texture *quit;
+    SDL_Texture *bgl;
+    void Lv();
     void renderTexture(SDL_Texture *texture, int x, int y, int w, int h);
     void renderTexture(SDL_Texture *texture, int x, int y);
     void load_map();
