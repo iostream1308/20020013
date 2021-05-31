@@ -14,5 +14,6 @@ Game này em lấy ý tưởng từ game cùng tên ở trên mạng, nhưng ch�
 Link demo: https://drive.google.com/file/d/1pjqdHHtOHU5vf6mnHv39Mp8oRJAqEb5O/view?usp=sharing
 
 Link drive: https://drive.google.com/drive/folders/1mfB9F46_ax8Trm7KTetg6aQzJraCg-xB?usp=sharing
+
 (Để chơi game chỉ cần extract file trong drive và chạy file exe) 
 
