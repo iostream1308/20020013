@@ -12,6 +12,7 @@ Game này em lấy ý tưởng từ game cùng tên ở trên mạng, nhưng ch�
 - Ngoài ra em còn sử dụng âm thanh nền khi ở menu, âm thanh nền khi chơi game, âm thanh khi click vào nút bấm, âm thanh khi nhân vật nhảy lên, tiếng la hét của nhân vật, âm thanh khi thắng hoặc thua, thêm hình ảnh nhân vật la hét mỗi khi chết.
 
 Link demo: https://drive.google.com/file/d/1pjqdHHtOHU5vf6mnHv39Mp8oRJAqEb5O/view?usp=sharing
+
 Link drive: https://drive.google.com/drive/folders/1mfB9F46_ax8Trm7KTetg6aQzJraCg-xB?usp=sharing
 (Để chơi game chỉ cần extract file trong drive và chạy file exe) 
 
