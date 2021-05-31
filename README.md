@@ -11,7 +11,7 @@ Game này em lấy ý tưởng từ game cùng tên ở trên mạng, nhưng ch�
 - Nếu đang chơi mà thua, thì màn hình sẽ hiển thị bạn đã thua cùng với 2 lựa chọn "chơi lại" và "quay về menu", nếu thắng thì ngoài 2 lựa chọn "chơi lại" hoặc "quay về menu" thì có thêm một lựa chọn nữa là "next level". Trong khi đang chơi, nếu muốn chơi lại hoặc quay trở về menu thì bên góc phải trên của màn hình luôn có 2 nút nhỏ để thực hiện 2 thao tác đó.
 - Ngoài ra em còn sử dụng âm thanh nền khi ở menu, âm thanh nền khi chơi game, âm thanh khi click vào nút bấm, âm thanh khi nhân vật nhảy lên, tiếng la hét của nhân vật, âm thanh khi thắng hoặc thua, thêm hình ảnh nhân vật la hét mỗi khi chết.
 
+Link demo: https://drive.google.com/file/d/1pjqdHHtOHU5vf6mnHv39Mp8oRJAqEb5O/view?usp=sharing
 Link drive: https://drive.google.com/drive/folders/1mfB9F46_ax8Trm7KTetg6aQzJraCg-xB?usp=sharing
 (Để chơi game chỉ cần extract file trong drive và chạy file exe) 
 
-Em nghĩ với những điều đó thì em tự đánh giá bản thân 9.5 điểm do code vẫn hơi xấu.
