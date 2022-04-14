@@ -2,8 +2,6 @@
 
 Game Trap Adventure là game kiểu vượt chướng ngại vật, trên đường đi sẽ có rất nhiều bẫy mọc lên bất thình lình mà chỉ cần không để ý thì sẽ không qua được.
 
-Game này em lấy ý tưởng từ game cùng tên ở trên mạng. Em chỉ tham khảo những hàm cơ bản của SDL trên mạng như là init, loadTexture, renderTexture, .. Còn lại tất cả những tính năng khác như : cách di chuyển nhân vật, check va chạm, rơi, menu, âm thanh, cài đặt các bẫy hoàn toàn là em tự code.
-
 *Mô tả tính năng:
 
 - Khi bắt đầu mở game thì mà hình sẽ hiện lên menu cho mình lựa chọn, có 3 lựa chọn là "start", "level" hoặc "quit". bấm Quit sẽ quit game, bấm level thì có thể chọn các level từ 1-9 để chơi. 
